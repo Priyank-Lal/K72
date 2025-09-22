@@ -1,8 +1,18 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: LA-300;
+  src: url(../public//Lausanne-300.woff2);
+}
+
+@font-face {
+  font-family: LA-500;
+  src: url(../public//Lausanne-500.woff2);
+}
+
 * {
-  margin: 0;
-  padding: 0;
+  /* margin: 0; */
+  /* padding: 0; */
   box-sizing: border-box;
 }
 
