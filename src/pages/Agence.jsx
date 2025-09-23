@@ -24,18 +24,28 @@ const Agence = () => {
     "https://k72.ca/uploads/teamMembers/MAXIME_480X640_2-480x640.jpg",
     "https://k72.ca/uploads/teamMembers/MEGGIE_480X640_2-480x640.jpg",
     "https://k72.ca/uploads/teamMembers/joel_480X640_3-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/MEGGIE_640X980_2-640x960.jpg",
   ];
 
   useGSAP(() => {
     gsap.to(imageDivRef.current, {
       scrollTrigger: {
-        markers: true,
         trigger: imageDivRef.current,
         start: "top 34.8%",
         end: "top -100%",
         scrub: true,
         pin: true,
+        onUpdate: (elem) => {
+          let imageIndex;
+          if (elem.progress < 1) {
+            imageIndex = Math.round(elem.progress * imagesArray.length);
+          } else {
+            imageIndex = imagesArray.length - 1;
+          }
+
+          const imageURL = imagesArray[imageIndex];
+
+          imageRef.current.src = imageURL;
+        },
       },
     });
   });
@@ -50,7 +60,7 @@ const Agence = () => {
           <img
             ref={imageRef}
             src="https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg"
-            alt=""
+            alt="Person Image"
             className="h-full w-full object-cover"
           />
         </div>
