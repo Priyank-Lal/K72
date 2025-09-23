@@ -6,7 +6,8 @@ import StairAnimation from "./components/common/StairAnimation";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <StairAnimation />
-    <App />
+    <StairAnimation>
+      <App />
+    </StairAnimation>
   </BrowserRouter>
 );
