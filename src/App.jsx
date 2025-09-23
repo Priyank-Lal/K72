@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import MainRoutes from "./routes/MainRoutes";
 
 const App = () => {
   return (
     <>
-    
       <MainRoutes />
     </>
   );
