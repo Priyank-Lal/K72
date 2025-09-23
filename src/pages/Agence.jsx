@@ -3,9 +3,15 @@ import React from "react";
 const Agence = () => {
   return (
     <>
-      <div>
-        <div></div>
-        <div className="font-[LA-500]">
+      <div className="section-1">
+        <div className="absolute overflow-hidden h-[20vw] w-[15vw] top-80 left-[30vw] rounded-4xl">
+          <img
+            src="https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="relative font-[LA-500]">
           <div className="mt-[55vh]">
             <h1 className="text-[20vw] leading-[18vw] text-center uppercase">
               Soixan7e <br />
@@ -25,6 +31,7 @@ const Agence = () => {
           </div>
         </div>
       </div>
+      <div className="section-2 h-screen"></div>
     </>
   );
 };
