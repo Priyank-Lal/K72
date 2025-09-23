@@ -1,11 +1,54 @@
-import React from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useRef } from "react";
 
 const Agence = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const imageDivRef = useRef(null);
+  const imageRef = useRef(null);
+
+  const imagesArray = [
+    "https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/Olivier_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/Lawrence_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/HugoJoseph_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/ChantalG_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/MyleneS_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/SophieA_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/Claire_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/Michele_480X640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/MEL_480X640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/CAMILLE_480X640_2-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/MAXIME_480X640_2-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/MEGGIE_480X640_2-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/joel_480X640_3-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/MEGGIE_640X980_2-640x960.jpg",
+  ];
+
+  useGSAP(() => {
+    gsap.to(imageDivRef.current, {
+      scrollTrigger: {
+        markers: true,
+        trigger: imageDivRef.current,
+        start: "top 34.8%",
+        end: "top -100%",
+        scrub: true,
+        pin: true,
+      },
+    });
+  });
+
   return (
     <>
       <div className="section-1">
-        <div className="absolute overflow-hidden h-[20vw] w-[15vw] top-80 left-[30vw] rounded-4xl">
+        <div
+          ref={imageDivRef}
+          className="absolute overflow-hidden h-[20vw] w-[15vw] top-72 left-[30vw] rounded-4xl"
+        >
           <img
+            ref={imageRef}
             src="https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg"
             alt=""
             className="h-full w-full object-cover"
