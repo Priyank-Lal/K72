@@ -1,10 +1,14 @@
 import React, { useRef } from "react";
 import MainRoutes from "./routes/MainRoutes";
+import Navbar from "./components/Navigation/Navbar";
 
 const App = () => {
   return (
     <>
-      <MainRoutes />
+      <div className="text-white">
+        <Navbar />
+        <MainRoutes />
+      </div>
     </>
   );
 };
